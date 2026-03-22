@@ -1,6 +1,8 @@
 package com.abhishek.devcollab.user;
 
+import com.abhishek.devcollab.dto.UserResponseDTO;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -13,13 +15,15 @@ public class UserController {
         this.userService = userService;
     }
 
+    // CREATE USER
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public UserResponseDTO createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
+    // GET ALL USERS
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<UserResponseDTO> getAllUsers() {
         return userService.getAllUsers();
     }
 }
