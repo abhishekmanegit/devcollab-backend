@@ -11,8 +11,15 @@ public class AuthController {
 
     private final AuthService authService;
 
+    // 🔐 LOGIN API
     @PostMapping("/login")
     public String login(@RequestBody LoginRequestDTO request) {
         return authService.login(request);
+    }
+
+    // 🆕 REGISTER API
+    @PostMapping("/register")
+    public String register(@RequestBody LoginRequestDTO request) {
+        return authService.register(request);
     }
 }
