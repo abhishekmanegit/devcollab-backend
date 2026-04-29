@@ -24,4 +24,9 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+
+    private String bio;
+
+    private String skills;
 }
